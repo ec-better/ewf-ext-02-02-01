@@ -2,7 +2,7 @@
   <jobTemplates>
     <jobTemplate id="notebook">
       <streamingExecutable>/application/notebook/run</streamingExecutable>
-      <defaultParameters><parameter id="backgroundWindowSize" title="Background Window Size" abstract="Background Window Size: The window size in pixels for computing local mean backscatter level." maxOccurs="1" scope="runtime" type="LiteralData">181</parameter><parameter id="thresholdShift" title="Threshold Shift" abstract="Threshold Shift (dB): The detecting threshold is lower than the local mean backscatter level by this amount." maxOccurs="1" scope="runtime" type="LiteralData">2.0</parameter><parameter id="minClusterSizeInKm2" title="Minimum Cluster Size" abstract="The minimum cluster size in square kilometer. Cluster with size smaller than this size is eliminated." maxOccurs="1" scope="runtime" type="LiteralData">0.1</parameter><parameter id="regionOfInterest" title="WKT Polygon for the Region of Interest" abstract="Set the value of WKT Polygon" maxOccurs="1" scope="runtime" type="LiteralData">POLYGON((-54.333 71.558, -49.843 71.558, -49.843 69.713, -54.333 69.713, -54.333 71.558))</parameter></defaultParameters>
+      <defaultParameters><parameter id="backgroundWindowSize" title="Background Window Size" abstract="Background Window Size: The window size in pixels for computing local mean backscatter level." minOccurs="1" maxOccurs="1" scope="runtime" type="LiteralData">181</parameter><parameter id="thresholdShift" title="Threshold Shift" abstract="Threshold Shift (dB): The detecting threshold is lower than the local mean backscatter level by this amount." minOccurs="1" maxOccurs="1" scope="runtime" type="LiteralData">2.0</parameter><parameter id="minClusterSizeInKm2" title="Minimum Cluster Size" abstract="The minimum cluster size in square kilometer. Cluster with size smaller than this size is eliminated." minOccurs="1" maxOccurs="1" scope="runtime" type="LiteralData">0.1</parameter><parameter id="regionOfInterest" title="WKT Polygon for the Region of Interest" abstract="Set the value of WKT Polygon" maxOccurs="1" scope="runtime" type="LiteralData">POLYGON ((-54.3452413212612 69.74156437889997, -51.65178350038967 69.98563658328254, -52.514956886601865 71.11255404659198, -55.35237767944321 70.857913012771, -54.3452413212612 69.74156437889997))</parameter></defaultParameters>
      <defaultJobconf>
         <property id="mapred.task.timeout">9900000000000</property>
         <property id="ciop.job.max.tasks">1</property> 
@@ -14,7 +14,7 @@
     <node id="notebook">
       <job id="notebook"/>
       <sources>
-        <source id="source" title="Input references" abstract="Input references" refid="string:list" scope="runtime">input_references=[https://catalog.terradue.com/sentinel1/search?uid=S1B_IW_GRDH_1SDH_20171025T204653_20171025T204718_007991_00E1E2_CBD2</source>
+        <source id="source" title="Input references" abstract="Input references" refid="string:list" scope="runtime">https://catalog.terradue.com/sentinel1/search?uid=S1B_IW_GRDH_1SDH_20171025T204653_20171025T204718_007991_00E1E2_CBD2</source>
       </sources>
     </node>
   </workflow>
